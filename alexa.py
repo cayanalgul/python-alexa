@@ -8,13 +8,14 @@ import time
 
 r = sr.Recognizer()
 
+#Alexa talk function
 def alexeTalk(command):
-
     talk = pyttsx3.init()
     talk.say(command)
     talk.runAndWait()
 
 
+#Listen function
 def listening():
     with sr.Microphone() as source:
         print("Seni dinliyorum")
@@ -30,6 +31,8 @@ def listening():
                 command = command.replace("alexa","")
         return command
 
+
+#Here we run alexa and check and process certain filters in the if-else structure.
 def run():
     while True:
         try:
